@@ -1,4 +1,4 @@
-# MATH 100 - Applied Linear Algebra - Spring 2024
+# MATH 100 - Applied Linear Algebra - 3 Units - Spring 2024
 
 Term Typically Offered: Fall, Spring
 
