@@ -36,7 +36,7 @@ Research Fellowship.
 **Recommended (not required)**:
 Linear Algebra and Its Applications, 5th or 6th Edition, by Lay, Lay, and McDonald.
 
-[5th Edition](https://www.amazon.com/Linear-Algebra-Applications-Student-ApplicationsStudent/dp/0134279190)
+[Linear Algebra and Its Applications 5th Edition](linear_algebra_and_its_applications_5th_edition.pdf)
 
 - ISBN-10: 0134279190
 - ISBN-13: 978-0134279190
