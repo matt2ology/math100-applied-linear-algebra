@@ -4,6 +4,8 @@ Term Typically Offered: Fall, Spring
 
 Days/Times: TuTh 10:30AM - 11:45AM
 
+Start/End Date: 01/22/2024 - 05/10/2024
+
 Prerequisite(s):
 
 - MATH 26B: Calculus II for the Social and Life
