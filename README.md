@@ -2,6 +2,8 @@
 
 Term Typically Offered: Fall, Spring
 
+Days/Times: TuTh 10:30AM - 11:45AM
+
 Prerequisite(s):
 
 - MATH 26B: Calculus II for the Social and Life
