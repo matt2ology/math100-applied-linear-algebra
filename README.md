@@ -1,12 +1,12 @@
 # MATH 100 - Applied Linear Algebra - 3 Units - Spring 2024
 
-Term Typically Offered: Fall, Spring
+**Term Typically Offered**: Fall, Spring
 
-Days/Times: TuTh 10:30AM - 11:45AM
+**Days/Times**: TuTh 10:30AM - 11:45AM
 
-Start/End Date: 01/22/2024 - 05/10/2024
+**Start/End Date**: 01/22/2024 - 05/10/2024
 
-Prerequisite(s):
+**Prerequisite(s)**:
 
 - MATH 26B: Calculus II for the Social and Life
 - MATH 31: Calculus II
@@ -33,7 +33,7 @@ Research Fellowship.
 
 # Book(s)
 
-Recommended (not required):
+**Recommended (not required)**:
 Linear Algebra and Its Applications, 5th or 6th Edition, by Lay, Lay, and McDonald.
 
 [5th Edition](https://www.amazon.com/Linear-Algebra-Applications-Student-ApplicationsStudent/dp/0134279190)
