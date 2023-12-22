@@ -11,7 +11,9 @@ Prerequisite(s):
 - MATH 26B: Calculus II for the Social and Life
 - MATH 31: Calculus II
 
-## Linear algebra and its elementary applications.
+## Catalog Description
+
+Linear algebra and its elementary applications.
 
 **Topics**: Matrix algebra; simultaneous linear equations; linear dependence
 and vector spaces; rank and inverses; determinants; numerical solution of
@@ -19,6 +21,7 @@ simultaneous linear equations; linear transformations; eigenvalues and
 eigenvectors; unitary and similarity transformations; quadratic forms.
 
 **Note**: May not be taken for credit toward a mathematics major.
+But, allowed for mathematics minor.
 
 ## Instructor: [Joshua Wiscons](https://webpages.csus.edu/wiscons/)
 
