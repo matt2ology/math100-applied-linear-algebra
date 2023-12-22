@@ -31,7 +31,7 @@ I worked as a visiting assistant professor at Hamilton College and as
 a postdoctoral researcher at Universität Münster on an NSF International
 Research Fellowship.
 
-# Book(s)
+## Book(s)
 
 **Recommended (not required)**:
 Linear Algebra and Its Applications, 5th or 6th Edition, by Lay, Lay, and McDonald.
