@@ -41,7 +41,7 @@
   - [4. SOlve Vector and Matrix Equations of the Form](#4-solve-vector-and-matrix-equations-of-the-form)
     - [4.1. Convert to an augmented matrix and then solve as a linear system](#41-convert-to-an-augmented-matrix-and-then-solve-as-a-linear-system)
   - [5. Determine if a vector b is a linear combination of the vectors](#5-determine-if-a-vector-b-is-a-linear-combination-of-the-vectors)
-    - [5.1. Converting an Augmented Matrix and Solving as a Linear ystem](#51-converting-an-augmented-matrix-and-solving-as-a-linear-ystem)
+    - [5.1. Converting an Augmented Matrix and Solving as a Linear System](#51-converting-an-augmented-matrix-and-solving-as-a-linear-system)
     - [5.2. Definitions of "Linear Combination" and "Span"](#52-definitions-of-linear-combination-and-span)
   - [6. Differences Between "Linear Combination" and "Span"](#6-differences-between-linear-combination-and-span)
     - [6.1. Determine Linear Combinations in $\\left\[v\_1::::v\_2::::\\dots ::::v\_k\\right\]$](#61-determine-linear-combinations-in-leftv_1v_2dots-v_kright)
@@ -562,7 +562,7 @@ Be able to determine if a vector $b$ is a linear combination of the vectors
 $v_1,\:v_2,\:\dots ,v_k$; this is the same as determining if $b$ is in
 Span $\left\{v_1,\:v_2,\:\dots ,\:v_k\right\}$
 
-### 5.1. Converting an Augmented Matrix and Solving as a Linear ystem
+### 5.1. Converting an Augmented Matrix and Solving as a Linear System
 
 **Usual process**: determine if
 $x_1\overline{v}_1\:+\:x_2\overline{v}_2\:+\:\dots \:+x_k\overline{v}_k\:=\:b$
