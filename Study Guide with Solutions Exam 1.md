@@ -35,6 +35,14 @@
       - [Practice 2.1.9 (Homework 02 - Question 8.4)](#practice-219-homework-02---question-84)
         - [Practice 2.1.9 Solution (Homework 02 - Question 8.4)](#practice-219-solution-homework-02---question-84)
     - [2.2. Consistent/Inconsistent Systems and Number of Solutions](#22-consistentinconsistent-systems-and-number-of-solutions)
+      - [Practice 2.2.6 (Homework 02 - Question 8.1)](#practice-226-homework-02---question-81)
+        - [Practice 2.2.6 Solution (Homework 02 - Question 8.1)](#practice-226-solution-homework-02---question-81)
+      - [Practice 2.2.7 (Homework 02 - Question 8.2)](#practice-227-homework-02---question-82)
+        - [Practice 2.2.7 Solution (Homework 02 - Question 8.2)](#practice-227-solution-homework-02---question-82)
+      - [Practice 2.2.8 (Homework 02 - Question 8.3)](#practice-228-homework-02---question-83)
+        - [Practice 2.2.8 Solution (Homework 02 - Question 8.3)](#practice-228-solution-homework-02---question-83)
+      - [Practice 2.2.9 (Homework 02 - Question 8.4)](#practice-229-homework-02---question-84)
+        - [Practice 2.2.9 Solution (Homework 02 - Question 8.4)](#practice-229-solution-homework-02---question-84)
     - [2.3. Solution Sets in Parametric Vector Form](#23-solution-sets-in-parametric-vector-form)
     - [2.4. Interpret Solution Sets Geometrically (Point, line, or plane)](#24-interpret-solution-sets-geometrically-point-line-or-plane)
   - [3. Multiply a matrix by a vector](#3-multiply-a-matrix-by-a-vector)
@@ -375,11 +383,150 @@ $\begin{cases} -10x&+10y&-6z&=10\\ 20x&-20y&+12z&=-20\\ -30x&+30y&-18z&=30 \end{
 
 $x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
 
+##### Practice 2.1.6 Solution (Homework 02 - Question 8.1)
+
+$$
+\begin{cases}
+  -10x&+10y&-6z&=10\\
+  20x&-20y&+12z&=-20\\
+  -30x&+30y&-18z&=30
+\end{cases}
+{\Huge\Rightarrow}
+\left[\begin{array}{ccc|c}
+  -10&10&-6&10\\
+  20&-20&12&-20\\
+  -30&30&-18&30
+\end{array}\right]
+{\large\sim\dots\sim}
+\left[\begin{array}{ccc|c}
+  1&-1&\frac{3}{5}&-1\\
+  0&0&0&0\\
+  0&0&0&0\\
+\end{array}\right]
+$$
+
+$x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\ z\:=\:\_\_\_\_\_\_\\$
+
+#### Practice 2.1.7 (Homework 02 - Question 8.2)
+
+Write as augmented matrix - Row reduce to REF or RREF - Write the solution set
+(using free variables if necessary)
+
+$\begin{cases}&-4x&-&16y&-&61z&=&6\\ &4x&+&17y&+&63z&=&10\\ &x&+&4y&+&15z&=&0 \end{cases}$
+
+$x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
+
+##### Practice 2.1.7 Solution (Homework 02 - Question 8.2)
+
+$$
+\begin{cases}
+  -4x&-16y&-61z&=6&\\
+  4x&+17y&+63z&=10&\\
+  x&+4y&+15z&=0&
+\end{cases}
+{\Huge\Rightarrow}
+\left[\begin{array}{ccc|c}
+  -4x&-16y&-61z&6\\
+  4x&+17y&+63z&10\\
+  x&+4y&+15z&0
+\end{array}\right]
+{\large\sim\dots\sim}
+\left[\begin{array}{ccc|c}
+  1&0&0&-22\\
+  0&1&0&28\\
+  0&0&1&-6
+\end{array}\right]
+$$
+
+$x\:=\:-22\\ y\:=\:28\\ z\:=\:-6\\$
+
+#### Practice 2.1.8 (Homework 02 - Question 8.3)
+
+Write as augmented matrix - Row reduce to REF or RREF - Write the solution set
+(using free variables if necessary)
+
+$\begin{cases}&3x&+&3y&-&3z&=&-5\\ &-3x&+&5y&+&5z&=&-3\\ &9x&+&25y&-&5z&=&-28 \end{cases}$
+
+$x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
+
+##### Practice 2.1.8 Solution (Homework 02 - Question 8.3)
+
+$$
+\begin{cases}
+  3x&+3y&-3z&=&-5\\
+  -3x&+5y&+5z&=&-3\\
+  9x&+25y&-5z&=&-28
+\end{cases}
+{\Huge\Rightarrow}
+\left[\begin{array}{ccc|c}
+  3&3&-3&-5\\
+  -3&5&5&-3\\
+  9&25&-5&-28
+\end{array}\right]
+{\large\sim\dots\sim}
+\left[\begin{array}{ccc|c}
+  1&0&-\frac{4}{5}&0\\
+  0&1&\frac{1}{4}&0\\
+  0&0&0&1
+\end{array}\right]
+$$
+
+$\left[-31\:\neq-28\right]$
+
+#### Practice 2.1.9 (Homework 02 - Question 8.4)
+
+Write as augmented matrix - Row reduce to REF or RREF - Write the solution set
+(using free variables if necessary)
+
+$\begin{cases}&3x&+&3y&-3z&=&-5\\ &-3x&+&5y&+5z&=&-3\\ &9x&+&25y&-5z&=&-31\end{cases}$
+
+$x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
+
+##### Practice 2.1.9 Solution (Homework 02 - Question 8.4)
+
+$$
+\begin{cases}
+  &3x&+&3y&-3z&=&-5\\
+  &-3x&+&5y&+5z&=&-3\\
+  &9x&+&25y&-5z&=&-31
+\end{cases}
+{\Huge\Rightarrow}
+\left[\begin{array}{ccc|c}
+  3&3&-3&-5\\
+  -3&5&5&-3\\
+  9&25&-5&-31
+\end{array}\right]
+{\large\sim\dots\sim}
+\left[\begin{array}{ccc|c}
+  1&0&-\frac{5}{4}&-\frac{2}{3}\\
+  0&1&\frac{1}{4}&-1\\
+  0&0&0&0
+\end{array}\right]
+$$
+
+$x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
+
+### 2.2. Consistent/Inconsistent Systems and Number of Solutions
+
+Be able to determine if the system is consistent/inconsistent and if there are
+infinitely many solutions
+
+#### Practice 2.2.6 (Homework 02 - Question 8.1)
+
+$\begin{cases} -10x&+10y&-6z&=10\\ 20x&-20y&+12z&=-20\\ -30x&+30y&-18z&=30 \end{cases}$
+
+$x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
+
 - [ ] No Solution
 - [ ] Infinite Number of Solutions
 - [ ] Unique Solution
 
-##### Practice 2.1.6 Solution (Homework 02 - Question 8.1)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+##### Practice 2.2.6 Solution (Homework 02 - Question 8.1)
 
 $$
 \begin{cases}
@@ -407,7 +554,12 @@ $x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\ z\:=\:\_\_\_\_\_\_\\$
 - [x] Infinite Number of Solutions
 - [ ] Unique Solution
 
-#### Practice 2.1.7 (Homework 02 - Question 8.2)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+#### Practice 2.2.7 (Homework 02 - Question 8.2)
 
 Write as augmented matrix - Row reduce to REF or RREF - Write the solution set
 (using free variables if necessary)
@@ -420,7 +572,12 @@ $x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
 - [ ] Infinite Number of Solutions
 - [ ] Unique Solution
 
-##### Practice 2.1.7 Solution (Homework 02 - Question 8.2)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+##### Practice 2.2.7 Solution (Homework 02 - Question 8.2)
 
 $$
 \begin{cases}
@@ -448,7 +605,12 @@ $x\:=\:-22\\ y\:=\:28\\ z\:=\:-6\\$
 - [ ] Infinite Number of Solutions
 - [x] Unique Solution
 
-#### Practice 2.1.8 (Homework 02 - Question 8.3)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+#### Practice 2.2.8 (Homework 02 - Question 8.3)
 
 Write as augmented matrix - Row reduce to REF or RREF - Write the solution set
 (using free variables if necessary)
@@ -461,7 +623,12 @@ $x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
 - [ ] Infinite Number of Solutions
 - [ ] Unique Solution
 
-##### Practice 2.1.8 Solution (Homework 02 - Question 8.3)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+##### Practice 2.2.8 Solution (Homework 02 - Question 8.3)
 
 $$
 \begin{cases}
@@ -489,7 +656,12 @@ $\left[-31\:\neq-28\right]$
 - [ ] Infinite Number of Solutions
 - [ ] Unique Solution
 
-#### Practice 2.1.9 (Homework 02 - Question 8.4)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+#### Practice 2.2.9 (Homework 02 - Question 8.4)
 
 Write as augmented matrix - Row reduce to REF or RREF - Write the solution set
 (using free variables if necessary)
@@ -502,7 +674,12 @@ $x\:=\:\_\_\_\_\_\_\\ y\:=\:\_\_\_\_\_\_\\ z\:=\:\_\_\_\_\_\_\\$
 - [ ] Infinite Number of Solutions
 - [ ] Unique Solution
 
-##### Practice 2.1.9 Solution (Homework 02 - Question 8.4)
+Is the linear system consistent?
+
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
+
+##### Practice 2.2.9 Solution (Homework 02 - Question 8.4)
 
 $$
 \begin{cases}
@@ -530,10 +707,10 @@ $x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
 - [x] Infinite Number of Solutions
 - [ ] Unique Solution
 
-### 2.2. Consistent/Inconsistent Systems and Number of Solutions
+Is the linear system consistent?
 
-Be able to determine if the system is consistent/inconsistent and if there are
-infinitely many solutions
+- [ ] YES, it's consistent
+- [ ] NO, it's inconsistent
 
 ### 2.3. Solution Sets in Parametric Vector Form
 
