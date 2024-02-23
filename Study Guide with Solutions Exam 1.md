@@ -46,7 +46,7 @@
     - [2.3. Solution Sets in Parametric Vector Form](#23-solution-sets-in-parametric-vector-form)
     - [2.4. Interpret Solution Sets Geometrically (Point, line, or plane)](#24-interpret-solution-sets-geometrically-point-line-or-plane)
   - [3. Multiply a matrix by a vector](#3-multiply-a-matrix-by-a-vector)
-  - [4. SOlve Vector and Matrix Equations of the Form](#4-solve-vector-and-matrix-equations-of-the-form)
+  - [4. Solve Vector and Matrix Equations of the Form](#4-solve-vector-and-matrix-equations-of-the-form)
     - [4.1. Convert to an augmented matrix and then solve as a linear system](#41-convert-to-an-augmented-matrix-and-then-solve-as-a-linear-system)
   - [5. Determine if a vector b is a linear combination of the vectors](#5-determine-if-a-vector-b-is-a-linear-combination-of-the-vectors)
     - [5.1. Converting an Augmented Matrix and Solving as a Linear System](#51-converting-an-augmented-matrix-and-solving-as-a-linear-system)
@@ -59,23 +59,53 @@
     - [7.3. Theorems and Ideas](#73-theorems-and-ideas)
   - [8. Application - Solve Network Flow Problems](#8-application---solve-network-flow-problems)
     - [8.1. Network Flows](#81-network-flows)
+      - [Practice 8.1.1 (Handout 05 - Question 1)](#practice-811-handout-05---question-1)
+        - [Practice 8.1.1 Solution (Handout 05 - Question 1)](#practice-811-solution-handout-05---question-1)
 
 ## 1. Be able to use the row reduction process to transform a matrix to RREF and REF
 
 **1.1** Make sure you can recognize when a matrix is in Row Echelon Form (REF) and Reduced Row Echelon Form (RREF)
 
-> Definition: Row Echelon (staircase) Forms
+> **Definition**: Row Echelon (staircase) Forms
 >
-> A matrix A is in **row echelon form (REF)** if
+> A matrix 'A' is in **row echelon form (REF)** if
 >
 > 1. all nonzero rows lie above any rows of all zeros;
-> 2. the leading entry (from the left) of each nonzero row is strictly to the right of the leading entry of the row above it.
+> 2. the leading entry (from the left) of each nonzero row is strictly to the
+>    right of the leading entry of the row above it.
 >
 > A matrix A is in **reduced row echelon form (RREF)** if,
 > in addition to **1.** and **2.**, it also satisfies
 >
-> 3. the leading entry (from the left) of each nonzero row is a `1` (called the **leading one**);
+> 3. the leading entry (from the left) of each nonzero row is a `1`
+>    (called the **leading one**);
 > 4. each leading one is the only nonzero entry in its column.
+>
+> ---
+>
+> **Strategy**: Row Reduction
+>
+> To transform a matrix to **REF** or **RREF**, use the following algorithm
+>
+> 1. Find the left most non-zero column - this is called the **pivot column**
+> 2. Choose a non-zero entry in the pivot column - this will be called the
+>    **pivot**. If necessary use, `INTERCHANGE` ($r_i\lrArr\:r_j$) operations
+>    to make sure the pivot is in the top row.
+> 3. Use `REPLACEMENT` ($r_i+Cr_j\rightarrow\:r_i$) operations to create zeros
+>    below the pivot
+> 4. Cover-up (or ignore) the row containing the pivot, and repeat steps 1-3 on
+>    the smaller matrix below. Continue repeating until there are no more
+>    non-zeros rows to modify.
+>
+> At this point the matrix is in **REF**. To transform to **RREF**, continue
+> with the process below.
+>
+> 5. Beginning with the right most pivot, working up to the left, use
+>    `REPLACEMENT` ($r_i+Cr_j\rightarrow\:r_i$) operations to create zeros
+>    _above_ each pivot. If a pivot is not `1`, use a `SCALING`
+>    ($Cr_i\rightarrow\:r_i$) operation to make it a `1`.
+>
+> At this point, the matrix is in **RREF**
 
 Determine if each of the following are in REF or RREF.
 
@@ -83,23 +113,32 @@ Determine if each of the following are in REF or RREF.
 
 $\begin{bmatrix} 1&2&3&0\\ 0&1&3&1\\ 0&0&0&1 \end{bmatrix}$
 
-- [x] The matrix is in REF
+- [ ] The matrix is in REF
 - [ ] The matrix is in RREF
 - [ ] Neither
 
 #### Practice 1.1.1 Solution (Handout 01 - Question 1.a)
 
-> Reason
+$\begin{bmatrix} 1&2&3&0\\ 0&1&3&1\\ 0&0&0&1 \end{bmatrix}$
+
+- [x] The matrix is in REF
+- [ ] The matrix is in RREF
+- [ ] Neither
+
+> Reason via definition
 >
 > > To determine if the matrix is in **row echelon from (REF)**
 > >
 > > 1. ✅ All non-zeros lie above any rows of all zeros
-> > 2. ✅ The **leading entry** (from the left) of each non-zero row is strictly to the right of the leading entry of the row above it
+> > 2. ✅ The **leading entry** (from the left) of each non-zero row is
+> >    strictly to the right of the leading entry of the row above it
 > >
 > > Now to determine if the matrix is in **reduced row echelon form (RREF)**
 > >
-> > 3. ✅ The leading entry (from the left) of each non-zero row is a `1` (called the **leading one**);
-> > 4. ❌ No **leading one** present in $x_3$: leading one is the only non-zero entry in its column.
+> > 3. ✅ The leading entry (from the left) of each non-zero row is a `1`
+> >    (called the **leading one**);
+> > 4. ❌ No **leading one** present in $x_3$: leading one is the only
+> >    non-zero entry in its column.
 
 ### Practice 1.1.2 (Handout 01 - Question 1.b)
 
@@ -107,18 +146,34 @@ $\begin{bmatrix}1&2&3\\ 0&2&5\\ 0&6&7\end{bmatrix}$
 
 - [ ] The matrix is in REF
 - [ ] The matrix is in RREF
-- [x] Neither
+- [ ] Neither
 
 #### Practice 1.1.2 Solution (Handout 01 - Question 1.b)
 
-> Reason
+$\begin{bmatrix}1&2&3\\ 0&2&5\\ 0&6&7\end{bmatrix}$
+
+- [ ] The matrix is in REF
+- [ ] The matrix is in RREF
+- [x] Neither
+
+> Reason via definition
 >
 > > To determine if the matrix is in **row echelon from (REF)**
 > >
 > > 1. ✅ All non-zeros lie above any rows of all zeros
-> > 2. ❌ $r_{23}$ ($x_2$ row 3) violates: The **leading entry** (from the left) of each non-zero row is strictly to the right of the leading entry of the row above it
+> > 2. ❌ $r_{23}$ ($x_2$ row 3) violates: The **leading entry**
+> >    (from the left) of each non-zero row is strictly to the right of the
+> >    leading entry of the row above it
 
 ### Practice 1.1.3 (Handout 01 - Question 1.c)
+
+$\begin{bmatrix}1&0&1&0&7\\ 0&0&0&1&3\\ 0&0&0&0&0\end{bmatrix}$
+
+- [ ] The matrix is in REF
+- [ ] The matrix is in RREF
+- [ ] Neither
+
+#### Practice 1.1.3 Solution (Handout 01 - Question 1.c)
 
 $\begin{bmatrix}1&0&1&0&7\\ 0&0&0&1&3\\ 0&0&0&0&0\end{bmatrix}$
 
@@ -126,18 +181,18 @@ $\begin{bmatrix}1&0&1&0&7\\ 0&0&0&1&3\\ 0&0&0&0&0\end{bmatrix}$
 - [x] The matrix is in RREF
 - [ ] Neither
 
-#### Practice 1.1.3 Solution (Handout 01 - Question 1.c)
-
-> Reason
+> Reason via definition
 >
 > > To determine if the matrix is in **row echelon from (REF)**
 > >
 > > 1. ✅ All non-zeros lie above any rows of all zeros
-> > 2. ✅ The **leading entry** (from the left) of each non-zero row is strictly to the right of the leading entry of the row above it
+> > 2. ✅ The **leading entry** (from the left) of each non-zero row is
+> >    strictly to the right of the leading entry of the row above it
 > >
 > > Now to determine if the matrix is in **reduced row echelon form (RREF)**
 > >
-> > 3. ✅ The leading entry (from the left) of each non-zero row is a `1` (called the **leading one**);
+> > 3. ✅ The leading entry (from the left) of each non-zero row is a `1`
+> >    (called the **leading one**);
 > > 4. ✅ leading one is the only non-zero entry in its column.
 
 ### Practice 1.1.4 (Handout 01 - Question 1.d)
@@ -146,11 +201,17 @@ $\begin{bmatrix}0&0&0&0\\ 0&1&0&1\\ 0&0&0&1\end{bmatrix}$
 
 - [ ] The matrix is in REF
 - [ ] The matrix is in RREF
-- [x] Neither
+- [ ] Neither
 
 #### Practice 1.1.4 Solution (Handout 01 - Question 1.d)
 
-> Reason
+$\begin{bmatrix}0&0&0&0\\ 0&1&0&1\\ 0&0&0&1\end{bmatrix}$
+
+- [ ] The matrix is in REF
+- [ ] The matrix is in RREF
+- [x] Neither
+
+> Reason via definition
 >
 > > To determine if the matrix is in **row echelon from (REF)**
 > >
@@ -162,11 +223,17 @@ $\begin{bmatrix}0&0&0\\ 0&7&6\\ 2&3&4\end{bmatrix}$
 
 - [ ] The matrix is in REF
 - [ ] The matrix is in RREF
-- [x] Neither
+- [ ] Neither
 
 #### Practice 1.1.5 Solution (Handout 01 - Question 1.e)
 
-> Reason
+$\begin{bmatrix}0&0&0\\ 0&7&6\\ 2&3&4\end{bmatrix}$
+
+- [ ] The matrix is in REF
+- [ ] The matrix is in RREF
+- [x] Neither
+
+> Reason via definition
 >
 > > To determine if the matrix is in **row echelon from (REF)**
 > >
@@ -179,26 +246,32 @@ $\begin{bmatrix}0&0&0\\ 0&7&6\\ 2&3&4\end{bmatrix}$
 
 $\begin{bmatrix} 3&0&1&6\\ 0&2&4&3\\ 0&0&1&3\end{bmatrix}$
 
-- [x] The matrix is in REF
+- [ ] The matrix is in REF
 - [ ] The matrix is in RREF
 - [ ] Neither
 
 #### Practice 1.1.6 Solution (Handout 01 - Question 1.f)
 
-Reason
+$\begin{bmatrix} 3&0&1&6\\ 0&2&4&3\\ 0&0&1&3\end{bmatrix}$
 
-To determine if the matrix is in **row echelon from (REF)**
+- [x] The matrix is in REF
+- [ ] The matrix is in RREF
+- [ ] Neither
 
-1. ✅ All non-zeros lie above any rows of all zeros
-2. ✅ The **leading entry** (from the left) of each non-zero row is
-   strictly to the right of the leading entry of the row above it
-
-Now to determine if the matrix is in **reduced row echelon form (RREF)**
-
-3. ❌ The leading entry (from the left) of each non-zero row is a `1`
-   (called the **leading one**);
-4. ❌ No **leading one** present in $x_3$: leading one is the only
-   non-zero entry in its column.
+> Reason via definition
+>
+> > To determine if the matrix is in **row echelon from (REF)**
+> >
+> > 1. ✅ All non-zeros lie above any rows of all zeros
+> > 2. ✅ The **leading entry** (from the left) of each non-zero row is
+> >    strictly to the right of the leading entry of the row above it
+> >
+> > Now to determine if the matrix is in **reduced row echelon form (RREF)**
+> >
+> > 3. ❌ The leading entry (from the left) of each non-zero row is a `1`
+> >    (called the **leading one**);
+> > 4. ❌ No **leading one** present in $x_3$: leading one is the only
+> >    non-zero entry in its column.
 
 ## 2. Be able to solve linear systems
 
@@ -365,7 +438,7 @@ $$
 \end{array}\right]
 $$
 
-$x\:=\:3\\ y\:=\:2\\ z\:=\:-3\\$
+$\Large x\:=\:3\\ y\:=\:2\\ z\:=\:-3\\$
 
 - [ ] None
 - [x] Exactly 1
@@ -405,7 +478,7 @@ $$
 \end{array}\right]
 $$
 
-$x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\ z\:=\:\_\_\_\_\_\_\\$
+$\Large x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\$
 
 #### Practice 2.1.7 (Homework 02 - Question 8.2)
 
@@ -471,7 +544,7 @@ $$
 \end{array}\right]
 $$
 
-$\left[-31\:\neq-28\right]$
+$\Large \left[-31\:\neq-28\right]$
 
 #### Practice 2.1.9 (Homework 02 - Question 8.4)
 
@@ -504,12 +577,19 @@ $$
 \end{array}\right]
 $$
 
-$x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
+$\Large x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
 
 ### 2.2. Consistent/Inconsistent Systems and Number of Solutions
 
 Be able to determine if the system is consistent/inconsistent and if there are
 infinitely many solutions
+
+> Recall
+>
+> > **Consistent**: There is at least 1 solution.
+> >
+> > If the system/matrix does not
+> > have any solution; then, the system/matrix is inconsistent
 
 #### Practice 2.2.6 (Homework 02 - Question 8.1)
 
@@ -548,7 +628,7 @@ $$
 \end{array}\right]
 $$
 
-$x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\ z\:=\:\_\_\_\_\_\_\\$
+$\Large x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\$
 
 - [ ] No Solution
 - [x] Infinite Number of Solutions
@@ -556,7 +636,7 @@ $x\:=\:1\\ y\:=\:\frac{3z+10}{5}\\ z\:=\:\_\_\_\_\_\_\\$
 
 Is the linear system consistent?
 
-- [ ] YES, it's consistent
+- [x] YES, it's consistent
 - [ ] NO, it's inconsistent
 
 #### Practice 2.2.7 (Homework 02 - Question 8.2)
@@ -599,7 +679,7 @@ $$
 \end{array}\right]
 $$
 
-$x\:=\:-22\\ y\:=\:28\\ z\:=\:-6\\$
+$\Large x\:=\:-22\\ y\:=\:28\\ z\:=\:-6\\$
 
 - [ ] No Solution
 - [ ] Infinite Number of Solutions
@@ -607,7 +687,7 @@ $x\:=\:-22\\ y\:=\:28\\ z\:=\:-6\\$
 
 Is the linear system consistent?
 
-- [ ] YES, it's consistent
+- [x] YES, it's consistent
 - [ ] NO, it's inconsistent
 
 #### Practice 2.2.8 (Homework 02 - Question 8.3)
@@ -650,7 +730,7 @@ $$
 \end{array}\right]
 $$
 
-$\left[-31\:\neq-28\right]$
+$\Large\left[-31\:\neq-28\right]$
 
 - [x] No Solution
 - [ ] Infinite Number of Solutions
@@ -659,7 +739,7 @@ $\left[-31\:\neq-28\right]$
 Is the linear system consistent?
 
 - [ ] YES, it's consistent
-- [ ] NO, it's inconsistent
+- [x] NO, it's inconsistent
 
 #### Practice 2.2.9 (Homework 02 - Question 8.4)
 
@@ -701,7 +781,7 @@ $$
 \end{array}\right]
 $$
 
-$x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
+$\Large x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
 
 - [ ] No Solution
 - [x] Infinite Number of Solutions
@@ -709,7 +789,7 @@ $x\:=\:\frac{15z-8}{12}\\ y\:=\:-\frac{z+4}{4}\\$
 
 Is the linear system consistent?
 
-- [ ] YES, it's consistent
+- [x] YES, it's consistent
 - [ ] NO, it's inconsistent
 
 ### 2.3. Solution Sets in Parametric Vector Form
@@ -724,7 +804,7 @@ Be able to interpret solution sets geometrically: point, line, or plane
 
 Be able to multiply a matrix by a vector
 
-## 4. SOlve Vector and Matrix Equations of the Form
+## 4. Solve Vector and Matrix Equations of the Form
 
 Be able to solve vector and matrix equations of the form
 $x_1\overline{v}_1\:+\:x_2\overline{v}_2\:+\:·\:·\:·\:+\:x_n\overline{v}_n\:=\:b\:and\:A\overline{x}\:=\:b$
@@ -806,3 +886,108 @@ Be able to solve network flow problems
 The main principle is that "flow in = flow out" at every intersection.
 Also, the flow into the entire network must equal the flow out of the entire
 network.
+
+#### Practice 8.1.1 (Handout 05 - Question 1)
+
+The network below shows the approximate traffic flow in vehicles per hour over
+various one-way streets in downtown Sacramento near the capitol building.
+
+![Handout 05 - Question 1](<attachments/Network Flows 01.png>)
+
+**Main Idea**: _Flow in is equal to the flow out_ at each intersection
+
+| Intersection Point | Flow-In = | Flow-Out $\rightarrow$ | Linear Equation |
+| :----------------: | --------- | ---------------------- | --------------- |
+|                    |           |                        |                 |
+|                    |           |                        |                 |
+|                    |           |                        |                 |
+|                    |           |                        |                 |
+
+**Solve the system**:
+
+##### Practice 8.1.1 Solution (Handout 05 - Question 1)
+
+| Intersection Point | Flow-In = | Flow-Out $\rightarrow$ | Linear Equation |
+| :----------------: | --------- | ---------------------- | --------------- |
+|         A          | $x_2+300$ | $200+x_3$              | $x_2+x_3=300$   |
+|         B          | $x_1+300$ | $500+x_2$              | $x_1-x_2=200$   |
+|         C          | $x_3+100$ | $x_4+300$              | $x_3-x_4=200$   |
+|         D          | $x_4+300$ | $x_1$                  | $-x_1+x_4=-300$ |
+
+**Solve the system**:
+
+$$
+\left[\begin{array}{cccc|c}
+  0&1&-1&0&-100\\
+  1&-1&0&0&200\\
+  0&0&1&-1&200\\
+  -1&0&0&1&-300
+\end{array}\right]
+{\underset{\Large\underset{r_1\rightleftarrows\:r_2}{\sim}}{\textnormal{Swap\:the\:rows\:1\:and\:2}}}
+\left[\begin{array}{cccc|c}
+  1&-1&0&0&200\\
+  0&1&-1&0&-100\\
+  0&0&1&-1&200\\
+  -1&0&0&1&-300
+\end{array}\right]
+{\underset{\Large\underset{r_4+r_1\rightarrow\:r_4}{\sim}}{\textnormal{Add\:row\:1\:to\:4}}}
+\left[\begin{array}{cccc|c}
+  1&-1&0&0&200\\
+  0&1&-1&0&-100\\
+  0&0&1&-1&200\\
+  0&-1&0&1&-100
+\end{array}\right]
+$$
+
+$$
+{\underset{\Large\underset{r_4+r_2\rightarrow\:r_4}{\sim}}{\textnormal{Add\:row\:2\:to\:row\:4}}}
+\left[\begin{array}{cccc|c}
+  1&-1&0&0&200\\
+  0&1&-1&-1&-100\\
+  0&0&1&-1&200\\
+  0&0&-1&1&-200
+\end{array}\right]
+{\underset{\Large\underset{r_4+r_3\rightarrow\:r_4}{\sim}}{\textnormal{Add\:row\:3\:to\:row\:4}}}
+\left[\begin{array}{cccc|c}
+  1&-1&0&0&200\\
+  0&1&-1&0&-100\\
+  0&0&1&-1&200\\
+  0&0&0&0&0
+\end{array}\right]
+\text{REF}
+$$
+
+$$
+\text{REF}
+\left[\begin{array}{cccc|c}
+  1&-1&0&0&200\\
+  0&1&-1&0&-100\\
+  0&0&1&-1&200\\
+  0&0&0&0&0
+\end{array}\right]
+{\underset{\Large\underset{r_2+r_3\rightarrow\:r_2}{\sim}}{\textnormal{Add\:row\:3\:to\:row\:2}}}
+\left[\begin{array}{cccc|c}
+  1&-1&0&0&200\\
+  0&1&0&-1&100\\
+  0&0&1&-1&200\\
+  0&0&0&0&0
+\end{array}\right]
+{\underset{\Large\underset{r_1+r_2\rightarrow\:r_1}{\sim}}{\textnormal{Add\:row\:2\:to\:row\:1}}}
+\left[\begin{array}{cccc|c}
+  1&0&0&-1&300\\
+  0&1&0&-1&100\\
+  0&0&1&-1&200\\
+  0&0&0&0&0
+\end{array}\right]
+\text{RREF}
+$$
+
+**We get the solution set**:
+
+$$
+\Large
+x_1=300+x_4\\
+x_2=100+x_4\\
+x_2=200+x_4\\
+x_4\:\textnormal{is free}
+$$
