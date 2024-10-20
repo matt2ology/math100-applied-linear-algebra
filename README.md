@@ -1,5 +1,7 @@
 # MATH 100 - Applied Linear Algebra - 3 Units - Spring 2024
 
+Course website: [Applied Linear Algebra](https://webpages.csus.edu/wiscons/teaching/math100-s24.html)
+
 **Term Typically Offered**: Fall, Spring
 
 **Days/Times**: TuTh 10:30AM - 11:45AM
